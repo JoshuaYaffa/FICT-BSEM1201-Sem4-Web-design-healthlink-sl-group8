@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="HealthLink SL - Connecting Sierra Leone to healthcare services anytime, anywhere">
+    <meta name="theme-color" content="#2E7D32">
+    <title>HealthLink SL | Healthcare Access in Sierra Leone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Google Translate -->
+   <script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,fr,ar,zh',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- Register Service Worker for Offline Mode -->
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+        .then(reg => console.log('✅ Service Worker registered:', reg))
+        .catch(err => console.log('❌ Service Worker error:', err));
+}
+</script>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <img src="images/logo-placeholder.png" alt="HealthLink SL Logo" onerror="this.style.display='none'">
+            <span style="color:#2E7D32;">HealthLink SL</span>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-menu">
+            <a href="index.html" class="active">Home</a>
+            <a href="services.html">Services</a>
+            <a href="emergency.html">Emergency</a>
+            <a href="clinics.html">Find Clinics</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+            <a href="admin.html">Admin</a>
+            <button class="dark-mode-toggle">🌙</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section with Carousel -->
+<section class="hero">
+    <div class="container">
+        <h1>Access Healthcare Anytime, Anywhere</h1>
+        <p>Find clinics, hospitals and emergency help near you in Sierra Leone</p>
+        <div class="search-box">
+            <input type="text" placeholder="Search hospital or clinic..." id="heroSearch">
+            <button class="btn btn-primary" onclick="window.location.href='clinics.html'">FIND NEAREST CLINIC</button>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Counter Section -->
+<section class="stats" style="padding: 60px 0; background: var(--bg-white);">
+    <div class="container">
+        <div class="stats-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center;">
+            <div class="stat-item">
+                <i class="fas fa-hospital" style="font-size: 48px; color: #2E7D32;"></i>
+                <h3 id="stat-clinics">500+</h3>
+                <p>Clinics & Hospitals</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-clock" style="font-size: 48px; color: #2E7D32;"></i>
+                <h3>24/7</h3>
+                <p>Emergency Support</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-users" style="font-size: 48px; color: #2E7D32;"></i>
+                <h3 id="stat-users">10K+</h3>
+                <p>Active Users</p>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-check-circle" style="font-size: 48px; color: #2E7D32;"></i>
+                <h3>16</h3>
+                <p>Districts Covered</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Image Carousel / Slider -->
+<section class="carousel-section" style="padding: 60px 0;">
+    <div class="container">
+        <h2 class="section-title">Healthcare in Sierra Leone</h2>
+        <div class="carousel-container" style="position: relative; overflow: hidden; border-radius: 12px;">
+            <div class="carousel-slides" style="display: flex; transition: transform 0.5s ease;">
+                <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=1200&h=500&fit=crop" alt="Connaught Hospital Freetown" style="width: 100%; min-width: 100%; height: 400px; object-fit: cover;">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&h=500&fit=crop" alt="Doctor with patient" style="width: 100%; min-width: 100%; height: 400px; object-fit: cover;">
+                <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=1200&h=500&fit=crop" alt="Emergency response" style="width: 100%; min-width: 100%; height: 400px; object-fit: cover;">
+            </div>
+            <button class="carousel-prev" style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 50%;">&lt;</button>
+            <button class="carousel-next" style="position: absolute; top: 50%; right: 20px; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 50%;">&gt;</button>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials" style="padding: 60px 0; background: var(--bg-light);">
+    <div class="container">
+        <h2 class="section-title">What Our Users Say</h2>
+        <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+            <div class="testimonial-card" style="background: var(--bg-white); padding: 30px; border-radius: 12px; box-shadow: var(--shadow);">
+                <div class="rating">★★★★★</div>
+                <p>"HealthLink SL helped me find a clinic near my home in Kenema within minutes. Saved my daughter's life!"</p>
+                <h4>- Mariatu S., Kenema</h4>
+            </div>
+            <div class="testimonial-card" style="background: var(--bg-white); padding: 30px; border-radius: 12px; box-shadow: var(--shadow);">
+                <div class="rating">★★★★★</div>
+                <p>"The emergency SOS feature is amazing. I got help immediately when my father had a stroke."</p>
+                <h4>- John K., Freetown</h4>
+            </div>
+            <div class="testimonial-card" style="background: var(--bg-white); padding: 30px; border-radius: 12px; box-shadow: var(--shadow);">
+                <div class="rating">★★★★☆</div>
+                <p>"Very useful for finding health information. I learned about vaccination campaigns near me."</p>
+                <h4>- Fatmata B., Makeni</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Signup -->
+<section class="newsletter" style="padding: 60px 0; background: var(--primary); color: white;">
+    <div class="container" style="text-align: center;">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to receive health tips and emergency alerts</p>
+        <form id="newsletterForm" style="display: flex; max-width: 500px; margin: 30px auto; gap: 10px;">
+            <input type="email" id="newsletterEmail" placeholder="Your email address" required style="flex: 1; padding: 12px; border: none; border-radius: 8px;">
+            <button type="submit" class="btn btn-primary" style="background: white; color: var(--primary);">Subscribe</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h4>HealthLink SL</h4>
+                <p>Connecting Sierra Leone to healthcare services, information and emergency support.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="emergency.html">Emergency</a>
+                <a href="clinics.html">Find Clinics</a>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone"></i> +232 76 123456</p>
+                <p><i class="fas fa-envelope"></i> info@healthlinksl.org</p>
+                <p><i class="fas fa-map-marker-alt"></i> Freetown, Sierra Leone</p>
+            </div>
+            <div>
+                <h4>SDG Alignment</h4>
+                <p><i class="fas fa-heartbeat"></i> GOOD HEALTH & WELL-BEING (SDG 3)</p>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 HealthLink SL. All rights reserved. | Digital Public Good</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+    // Carousel functionality
+    const slides = document.querySelector('.carousel-slides');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    let currentIndex = 0;
+    
+    if (slides && prevBtn && nextBtn) {
+        const totalSlides = slides.children.length;
+        
+        const updateCarousel = () => {
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        };
+        
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+        
+        // Auto slide every 5 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }, 5000);
+    }
+    
+    // Newsletter form
+    const newsletterForm = document.getElementById('newsletterForm');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('newsletterEmail').value;
+            if (validateEmail(email)) {
+                alert('Thank you for subscribing! You will receive health updates.');
+                newsletterForm.reset();
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+    }
+    
+    // Animate stats counters
+    const animateNumber = (element, target) => {
+        let current = 0;
+        const increment = target / 50;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                element.textContent = target + '+';
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(current) + '+';
+            }
+        }, 30);
+    };
+    
+    // Trigger stats animation when in view
+    const statsSection = document.querySelector('.stats');
+    if (statsSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumber(document.getElementById('stat-clinics'), 500);
+                    animateNumber(document.getElementById('stat-users'), 10000);
+                    observer.disconnect();
+                }
+            });
+        });
+        observer.observe(statsSection);
+    }
+</script>
+</body>
+</html>
