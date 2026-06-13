@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthLink SL | Our Services</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,fr,ar,zh',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"><span style="color:#2E7D32; font-size: 24px; font-weight: 700;">HealthLink SL</span></div>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+        <div class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="emergency.html">Emergency</a>
+            <a href="clinics.html">Find Clinics</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+            <a href="admin.html">Admin</a>
+            <button class="dark-mode-toggle">🌙</button>
+        </div>
+    </div>
+</nav>
+
+<section class="page-header" style="background: var(--primary); color: white; padding: 60px 0; text-align: center;">
+    <div class="container">
+        <h1>Our Services</h1>
+        <p>Comprehensive healthcare solutions for Sierra Leone</p>
+    </div>
+</section>
+
+<section class="services" style="padding: 60px 0;">
+    <div class="container">
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Find Clinics</h3>
+                <div class="rating">★★★★☆</div>
+                <p>Search and locate nearby hospitals and clinics in Sierra Leone. Our database includes 500+ verified facilities across all 16 districts.</p>
+                <button class="btn btn-primary" onclick="window.location.href='clinics.html'">Learn More →</button>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-book-medical"></i>
+                <h3>Health Information</h3>
+                <div class="rating">★★★★★</div>
+                <p>Get reliable health tips, disease information and prevention guides. Updated regularly by medical professionals.</p>
+                <button class="btn btn-outline" id="healthInfoBtn">Learn More →</button>
+                <button class="btn btn-primary" id="downloadTipsBtn" style="margin-top: 10px; background: #4CAF50;"><i class="fas fa-download"></i> Download Health Tips PDF</button>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-ambulance"></i>
+                <h3>Emergency Help</h3>
+                <div class="rating">★★★★★</div>
+                <p>Request emergency assistance and get help fast. Our emergency response team is available 24/7.</p>
+                <button class="btn btn-emergency" onclick="window.location.href='emergency.html'">Get Emergency Help →</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="appointment" style="padding: 60px 0; background: var(--bg-light);">
+    <div class="container">
+        <h2 class="section-title">Book an Appointment</h2>
+        <div style="max-width: 600px; margin: 0 auto;">
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" id="aptName" required>
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" id="aptEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone *</label>
+                    <input type="tel" id="aptPhone" required>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Date *</label>
+                    <input type="date" id="aptDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Department</label>
+                    <select id="aptDepartment">
+                        <option>General Medicine</option>
+                        <option>Pediatrics</option>
+                        <option>Maternity</option>
+                        <option>Emergency</option>
+                        <option>Dental</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea id="aptMessage" rows="3" placeholder="Describe your symptoms..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">📅 Book Appointment</button>
+            </form>
+            <div id="appointmentSuccess" style="display: none; margin-top: 20px; padding: 15px; border-radius: 8px;"></div>
+        </div>
+    </div>
+</section>
+
+<div id="healthModal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <h2>Health Tips & Information</h2>
+        <div style="margin: 20px 0;">
+            <h3>💧 Stay Hydrated</h3>
+            <p>Drink at least 8 glasses of water daily, especially in Sierra Leone's tropical climate.</p>
+            <h3>🦟 Prevent Malaria</h3>
+            <p>Use mosquito nets and repellent. Seek medical attention if you have fever.</p>
+            <h3>💉 Vaccination Schedule</h3>
+            <p>Visit your nearest clinic for routine vaccinations. Check with Ministry of Health for updates.</p>
+            <h3>🤰 Maternal Health</h3>
+            <p>Pregnant women should attend all antenatal checkups. Free healthcare for pregnant women in government facilities.</p>
+            <h3>🥗 Nutrition</h3>
+            <p>Eat a balanced diet with local fruits and vegetables. Limit processed foods and sugar.</p>
+        </div>
+        <button class="btn btn-primary" onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div><h4>HealthLink SL</h4><p>Connecting Sierra Leone to healthcare services.</p></div>
+            <div><h4>Quick Links</h4><a href="index.html">Home</a><a href="services.html">Services</a><a href="emergency.html">Emergency</a></div>
+            <div><h4>Contact</h4><p><i class="fas fa-phone"></i> +232 79 629214</p><p><i class="fas fa-envelope"></i> info@healthlinksl.org</p></div>
+            <div><h4>SDG 3</h4><p>Good Health & Well-being</p><div id="google_translate_element"></div></div>
+        </div>
+        <div class="copyright"><p>&copy; 2025 HealthLink SL. Digital Public Good</p></div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+    // Modal functionality
+    const modal = document.getElementById('healthModal');
+    const healthBtn = document.getElementById('healthInfoBtn');
+    window.closeModal = function() { 
+        if (modal) modal.style.display = 'none'; 
+    };
+    function openModal() { 
+        if (modal) modal.style.display = 'flex'; 
+    }
+    if (healthBtn) healthBtn.onclick = openModal;
+    window.onclick = (e) => { if (e.target === modal) closeModal(); };
+    
+    // Download PDF functionality
+    const downloadBtn = document.getElementById('downloadTipsBtn');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', () => {
+            const content = `HEALTHLINK SL - HEALTH TIPS GUIDE\n================================\n\n1. STAY HYDRATED\nDrink 8+ glasses of water daily.\n\n2. PREVENT MALARIA\nUse mosquito nets and repellent.\n\n3. VACCINATION\nKeep up with routine vaccines.\n\n4. MATERNAL HEALTH\nAttend all antenatal checkups.\n\n5. NUTRITION\nEat balanced meals with local produce.\n\nFor more info: www.healthlinksl.org\nEmergency: +232 79 629214`;
+            const blob = new Blob([content], {type: 'text/plain'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'health-tips-guide.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+            alert('✅ Health tips guide downloaded!');
+        });
+    }
+    
+    // Appointment form - FULLY FIXED with email notification
+    const aptForm = document.getElementById('appointmentForm');
+    const appointmentSuccess = document.getElementById('appointmentSuccess');
+
+    if (aptForm) {
+        aptForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('aptName').value;
+            const email = document.getElementById('aptEmail').value;
+            const phone = document.getElementById('aptPhone').value;
+            const date = document.getElementById('aptDate').value;
+            const department = document.getElementById('aptDepartment').value;
+            const message = document.getElementById('aptMessage').value;
+            
+            const emailRegex = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+            
+            if (!name || !email || !phone || !date) {
+                alert('❌ Please fill all required fields (Name, Email, Phone, Date)');
+                return;
+            }
+            
+            if (!emailRegex.test(email)) {
+                alert('❌ Please enter a valid email address');
+                return;
+            }
+            
+            // Disable button and show loading
+            const submitBtn = aptForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = '⏳ Sending...';
+            submitBtn.disabled = true;
+            
+            // Save appointment to localStorage (for admin panel)
+            const appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+            const newAppointment = {
+                id: Date.now(),
+                name: name,
+                email: email,
+                phone: phone,
+                date: date,
+                department: department,
+                message: message,
+                status: 'pending',
+                createdAt: new Date().toLocaleString()
+            };
+            appointments.push(newAppointment);
+            localStorage.setItem('appointments', JSON.stringify(appointments));
+            
+            // Also save to general messages
+            const allMessages = JSON.parse(localStorage.getItem('allMessages') || '[]');
+            allMessages.push({
+                id: Date.now(),
+                type: 'APPOINTMENT',
+                ...newAppointment
+            });
+            localStorage.setItem('allMessages', JSON.stringify(allMessages));
+            
+            // Send email via Formspree (using your ID: xgoqrabe)
+            try {
+                const response = await fetch('https://formspree.io/f/xgoqrabe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        phone: phone,
+                        _subject: `📅 APPOINTMENT REQUEST: ${department} - ${name}`,
+                        message: `APPOINTMENT REQUEST DETAILS:
+─────────────────────────────────────────
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Preferred Date: ${date}
+Department: ${department}
+Additional Message: ${message || 'No additional message'}
+─────────────────────────────────────────
+Please contact the patient to confirm this appointment.
+                        
+Thank you,
+HealthLink SL System`
+                    })
+                });
+                
+                if (appointmentSuccess) {
+                    appointmentSuccess.style.display = 'block';
+                    appointmentSuccess.innerHTML = `✅ APPOINTMENT REQUEST SENT SUCCESSFULLY!<br><br>
+                    <strong>Thank you ${name}!</strong><br><br>
+                    📅 Date: ${date}<br>
+                    🏥 Department: ${department}<br>
+                    📞 Phone: ${phone}<br><br>
+                    We have received your request and will contact you within 24 hours to confirm.<br><br>
+                    <strong>HealthLink SL - Your Health, Our Priority! 💚</strong>`;
+                    appointmentSuccess.style.background = '#e8f5e9';
+                    appointmentSuccess.style.color = '#2e7d32';
+                    appointmentSuccess.style.padding = '15px';
+                    appointmentSuccess.style.borderRadius = '8px';
+                    aptForm.reset();
+                    setTimeout(() => { appointmentSuccess.style.display = 'none'; }, 8000);
+                } else {
+                    alert(`✅ APPOINTMENT REQUEST RECEIVED!\n\nThank you ${name}!\n\n📅 Date: ${date}\n🏥 Department: ${department}\n📞 Phone: ${phone}\n\nWe will contact you within 24 hours to confirm your appointment.\n\nHealthLink SL - Your Health, Our Priority!`);
+                    aptForm.reset();
+                }
+            } catch (error) {
+                // Fallback if email fails
+                alert(`✅ APPOINTMENT SAVED LOCALLY!\n\nThank you ${name}!\n\n📅 Date: ${date}\n🏥 Department: ${department}\n📞 Phone: ${phone}\n\nWe will review your request and contact you soon.\n\nHealthLink SL - Your Health, Our Priority!`);
+                aptForm.reset();
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
+</script>
+<!-- DARK MODE FIX -->
+<script>
+(function() {
+    const darkModeBtn = document.querySelector('.dark-mode-toggle');
+    if (!darkModeBtn) return;
+    function setTheme(theme) {
+        if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            darkModeBtn.innerHTML = '☀️';
+            localStorage.setItem('darkMode', 'enabled');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            darkModeBtn.innerHTML = '🌙';
+            localStorage.setItem('darkMode', 'disabled');
+        }
+    }
+    const savedMode = localStorage.getItem('darkMode');
+    setTheme(savedMode === 'enabled' ? 'dark' : 'light');
+    darkModeBtn.onclick = function(e) {
+        e.preventDefault();
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        setTheme(isDark ? 'light' : 'dark');
+    };
+})();
+</script>
+</body>
+</html>
