@@ -1,11 +1,11 @@
 # 🏥 HealthLink SL - Sierra Leone Healthcare Directory
 
 ## Live Website
-**URL:** https://joshuayaffa.github.io/healthlink-sl/
+**URL:**  https://joshuayaffa.github.io/FICT-BSEM1201-Sem4-Web-design-healthlink-sl-group8/
 
-**Admin Panel:** https://joshuayaffa.github.io/healthlink-sl/admin.html
-- Username: `admin`
-- Password: `admin123`
+**Admin Panel:**  https://joshuayaffa.github.io/FICT-BSEM1201-Sem4-Web-design-healthlink-sl-group8/admin.html
+- Username: `Joshua`
+- Password: `phinney`
 
 ## Features
 - ✅ 500+ clinics across all 16 districts
