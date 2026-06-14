@@ -18,4 +18,7 @@
 - ✅ Multi-language (Google Translate)
 - ✅ WhatsApp & Click-to-call integration
 
-## Project Structure
+## Group members ( Group - 8 BSEM1201-semseter-4)
+1. Joshua Mohamed Katibi Yaffa , ID: 905004075
+2. Ayisha Junesta Bockarie , ID: 905004096
+3. Alhaji Tanu Jalloh , ID: 905004675
