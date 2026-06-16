@@ -4,8 +4,8 @@
 **URL:**  https://joshuayaffa.github.io/FICT-BSEM1201-Sem4-Web-design-healthlink-sl-group8/
 
 **Admin Panel:**  https://joshuayaffa.github.io/FICT-BSEM1201-Sem4-Web-design-healthlink-sl-group8/admin.html
-- Username: `Joshua`
-- Password: `phinney`
+- Username: `admin`
+- Password: `admin123`
 
 ## Features
 - ✅ 500+ clinics across all 16 districts
